@@ -1,0 +1,22 @@
+{
+  "name": "imc_bs",
+  "version": "1.0.0",
+  "description": "A simple bot for the brawl star club \"IMC BS\".",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamlol/imc_BS.git"
+  },
+  "author": "pamlol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pamlol/imc_BS/issues"
+  },
+  "homepage": "https://github.com/pamlol/imc_BS#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
