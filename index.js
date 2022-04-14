@@ -51,5 +51,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 });
 
 // invite link: https://discord.com/api/oauth2/authorize?client_id=963769091196334120&permissions=8&scope=bot
-const TOKEN = process.env.TOKEN || require(`./token.json`).token;
+let TOKEN;
+try{ TOKEN = require(`./token.json`).token; } catch(e) {}
+if(TOKEN === undefined) TOKEN = process.env.TOKEN;
 client.login(TOKEN);

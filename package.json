@@ -1,6 +1,6 @@
 {
   "name": "imc_bs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple bot for the brawl star club \"IMC BS\".",
   "main": "index.js",
   "scripts": {
