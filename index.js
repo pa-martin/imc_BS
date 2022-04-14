@@ -54,4 +54,4 @@ client.on('messageReactionAdd', async (reaction, user) => {
 let TOKEN;
 try{ TOKEN = require(`./token.json`).token; } catch(e) {}
 if(TOKEN === undefined) TOKEN = process.env.TOKEN;
-client.login(TOKEN);
+try{ client.login(TOKEN); } catch(e) {}
