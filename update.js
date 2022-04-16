@@ -1,4 +1,4 @@
-module.exports.run = async (channel, ROLE_ID) => {
+module.exports.run = async (channel, ROLE_ID, PAM) => {
     const date = new Date();
     const DAYS = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
     const START = [3, 5, 0];
@@ -12,9 +12,12 @@ module.exports.run = async (channel, ROLE_ID) => {
     }else if(END.includes(date.getUTCDay()) && date.getUTCHours() === 12 - UTC_OFFSET) {
         supr();
         channel.send(`<@&${ROLE_ID}> Fin de la bataille dans ${14 - date.getUTCHours()} heures !`);
+    }else if(END.includes(date.getUTCDay()) && date.getUTCHours() === 13 - UTC_OFFSET & date.getMinutes() === 30) {
+        await PAM.lastMessage.delete().catch();
+        PAM.send("Il te reste 30min trou de balle.")
     }else if(END.includes(date.getUTCDay()) && date.getUTCHours() === 14) {
         supr();
-        channel.send(`La bataille est terminée, rendez-vous ${DAYS[date.getDay()+(date.getUTCDay() === 1 ? 2 : 1)]}, ${date.getUTCHours() + UTC_OFFSET} heure, pour une nouvelle bataille !`);
+        channel.send(`La bataille est terminée, rendez-vous ${DAYS[(date.getDay()+(date.getUTCDay() === 1 ? 2 : 1))%7]}, ${date.getUTCHours() + UTC_OFFSET} heure, pour une nouvelle bataille !`);
     }
 
     function supr() {

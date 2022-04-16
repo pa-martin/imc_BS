@@ -8,6 +8,7 @@ client.on('ready', () => {
 
     const date = new Date();
     const channel = client.channels.cache.get(config.CHANNEL_ID);
+    const PAM = client.users.cache.get(config.PAM_ID);
 /*
     channel.send("Bonjour !\n" +
         "Seront données dans ce channel les alertes relatives au début et à la fin des jours de guerre.\n" +
